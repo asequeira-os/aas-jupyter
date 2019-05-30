@@ -1,0 +1,15 @@
+version: '3.5'
+
+services:
+  jupyter:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: aas-jupyter
+    ports:
+      - 8888:8888
+    networks:
+      - jupyter
+
+networks:
+  jupyter:
