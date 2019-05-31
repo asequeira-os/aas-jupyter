@@ -1,0 +1,16 @@
+[packages]
+jupyter = "*"
+keras = "*"
+matplotlib = "*"
+numpy = "*"
+pandas = "*"
+pillow = "*"
+scipy = "*"
+scikit-learn = "*"
+seaborn = "*"
+shapely = "*"
+tensorflow = "*"
+Wand = "*"
+
+[requires]
+python_version = "3.7"
