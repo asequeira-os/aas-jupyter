@@ -3,6 +3,9 @@
 
 : ${DOCKER_NOTEBOOK_DIR:="/hdir/${NOTEBOOK_DIR}"}
 
+MYDIR=$(dirname ${BASH_SOURCE})
+
+cd "${MYDIR}"
 docker-compose --project-directory . -f docker/docker-compose.yml build jupyter
 
 echo "home dir will be mounted at /hdir"
