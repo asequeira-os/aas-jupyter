@@ -1,10 +1,12 @@
 [packages]
+image = "*"
 jupyter = "*"
 keras = "*"
 matplotlib = "*"
 numpy = "*"
 pandas = "*"
 pillow = "*"
+PIP = "*"
 scipy = "*"
 scikit-learn = "*"
 seaborn = "*"

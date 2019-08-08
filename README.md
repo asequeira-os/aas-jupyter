@@ -3,7 +3,8 @@ Run jupyter notebooks in docker.
  
 Notebooks are saved in the host file system.
 
-## Installation
+## Python
+### Installation
 
 1. clone the repo
 2. create a dir for notebooks. This needs to be under the docker host user's home dir (can be deep). e.g. `~/notebooks`
@@ -15,3 +16,8 @@ When the notebook is ready, open http://localhost:8888 and use the token seen in
 
 # IMPORTANT note
 Container mounts the host home dir at `/hdir`
+
+## R
+```bash
+NOTEBOOK_DIR=<full path to notebooks dir> <this repo>/R/run.sh 
+```
