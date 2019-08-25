@@ -14,10 +14,22 @@ Notebooks are saved in the host file system.
 When the notebook is ready, open http://localhost:8888 and use the token seen in the docker run output for login.
 
 
-# IMPORTANT note
+## dir mount note
 Container mounts the host home dir at `/hdir`
 
 ## R
 ```bash
 NOTEBOOK_DIR=<full path to notebooks dir> <this repo>/R/run.sh 
 ```
+
+## R Studio
+```bash
+NOTEBOOK_DIR=<full path to notebooks dir> /R/studio/run
+```
+
+The script builds the image, runs the container, opens Rstudio in browser.
+
+The notebook dir will appear as `<HONE>/Documents` in the RStduio
+
+More libraries can be added by modifying 
+[R/studio.Dockerfile](./R/studio/Dockerfile)
