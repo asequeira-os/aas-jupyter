@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 MYDIR=$(dirname ${BASH_SOURCE})
+
+docker kill aas-rstudio
+sleep 2
 docker build -t aas-rstudio ${MYDIR}
 
 : ${NOTEBOOK_DIR:="${HOME}/notebooks"}
-docker run --rm -d -v ${NOTEBOOK_DIR}:/home/rstudio/Documents -e DISABLE_AUTH=true -p 8787:8787 aas-rstudio
+docker run --rm -d -v ${NOTEBOOK_DIR}:/home/rstudio/Documents -e DISABLE_AUTH=true -p 8787:8787 --name aas-rstudio aas-rstudio
+sleep 2
 open http://localhost:8787
