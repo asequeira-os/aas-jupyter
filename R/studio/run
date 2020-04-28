@@ -3,7 +3,7 @@ MYDIR=$(dirname ${BASH_SOURCE})
 
 docker kill aas-rstudio
 sleep 2
-docker build -t aas-rstudio ${MYDIR}
+docker build -t aas-rstudio --cpuset-cpus 0,1 ${MYDIR}
 
 : ${NOTEBOOK_DIR:="${HOME}/notebooks"}
 docker run --rm -d -v ${NOTEBOOK_DIR}:/home/rstudio/Documents -e DISABLE_AUTH=true -p 8787:8787 --name aas-rstudio aas-rstudio
